@@ -7,9 +7,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+cleo = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.7.0"
+
+[tool.poetry.scripts]
+fasttemplate = "fasttemplate.console.application:main"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.1.1"
