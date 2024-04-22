@@ -11,7 +11,9 @@ from fasttemplate.console.commands._base import Command
 if TYPE_CHECKING:
     from types import ModuleType
 
-COMMANDS: list[str] = []
+COMMANDS: list[str] = [
+    "about",
+]
 
 
 def _load_command(name: str) -> Callable[[], Command]:
