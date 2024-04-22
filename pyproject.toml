@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "fasttemplate"
+version = "0.0.1"
+description = "Python project builer"
+authors = ["Ivan Koldakov <coldie322@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
