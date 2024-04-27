@@ -1,4 +1,5 @@
 from abc import ABC
+from os import getlogin
 from pathlib import Path
 from typing import NamedTuple
 
@@ -78,11 +79,22 @@ class LayoutBase(ABC):
         src: bool = False,
     ) -> None:
         self.project: Project = project
-        self.author: Author | None = author
+        self.author: Author | None = self._get_author(author)
         self.asset: Asset = asset
         self.src: bool = src
 
         self._validate_asset()
+
+    def _get_author(self, author: Author | None, /) -> Author | None:
+        """
+        TODO: Read username/login from GIT
+        """
+        if author:
+            return author
+
+        return Author(
+            name=getlogin(),
+        )
 
     def _validate_asset(self) -> None:
         if self.asset not in self.assets:
