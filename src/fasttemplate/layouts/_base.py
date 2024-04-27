@@ -105,7 +105,7 @@ class LayoutBase(ABC):
             "src" if self.src else self.fixed_project_name,
             "tests",
         ]
-        return {"project": self.project._asdict() | {"mypy_files": mypy_files}}
+        return {"project": self.project._asdict() | {"mypy_files": mypy_files, "src_rel_path": self.src_rel_path}}
 
     @property
     def fields(self):
@@ -140,6 +140,12 @@ class LayoutBase(ABC):
     @property
     def _src_asset_dir(self) -> Path:
         return Path("src")
+
+    @property
+    def src_rel_path(self) -> Path:
+        if self.src:
+            return Path("src") / self.fixed_project_name
+        return Path(self.fixed_project_name)
 
     def _create_file(self, dir_: Path, file: Path, /) -> None:
         source_dir: Path
