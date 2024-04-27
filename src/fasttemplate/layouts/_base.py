@@ -105,7 +105,14 @@ class LayoutBase(ABC):
             "src" if self.src else self.fixed_project_name,
             "tests",
         ]
-        return {"project": self.project._asdict() | {"mypy_files": mypy_files, "src_rel_path": self.src_rel_path}}
+        return {
+            "project": self.project._asdict()
+            | {
+                "mypy_files": mypy_files,
+                "src_rel_path": self.src_rel_path,
+                "fixed_project_name": self.fixed_project_name,
+            }
+        }
 
     @property
     def fields(self):
