@@ -14,6 +14,7 @@ if TYPE_CHECKING:
 COMMANDS: list[str] = [
     "about",
     "new",
+    "asset",
 ]
 
 
