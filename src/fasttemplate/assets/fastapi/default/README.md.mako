@@ -3,6 +3,7 @@
 ## Requirements
 
 - Python >= 3.12
+- GIT
 
 ## Usage
 
