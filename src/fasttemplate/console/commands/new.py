@@ -85,7 +85,7 @@ Congratulations! Project <info>{name}</info> created.
     asset type = {asset.type}
     asset name = {asset.name}
 </info>
-Now you can go to the project: <info>cd {layout.project_dir}</info> and start!
+Now you can go to the project: <info>cd {layout.project_dir} && make install</info> and start!
 
 <comment>Happy coding!</comment>\
 """
