@@ -4,6 +4,14 @@ version = "0.0.1"
 description = "Python project builer"
 authors = ["Ivan Koldakov <coldie322@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/koldakov/fasttemplate"
+repository = "https://github.com/koldakov/fasttemplate"
+keywords = [
+    "packaging",
+    "poetry",
+    "skeleton",
+    "fastapi",
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
