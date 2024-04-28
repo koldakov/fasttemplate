@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fasttemplate"
-version = "0.0.1"
+version = "0.0.2"
 description = "Python project builer"
 authors = ["Ivan Koldakov <coldie322@gmail.com>"]
 readme = "README.md"
