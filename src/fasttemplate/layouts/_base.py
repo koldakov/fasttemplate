@@ -92,8 +92,13 @@ class LayoutBase(ABC):
         if author:
             return author
 
+        login: str
+        try:
+            login = getlogin()
+        except OSError:
+            login = "My Greate Name"
         return Author(
-            name=getlogin(),
+            name=login,
         )
 
     def _validate_asset(self) -> None:
