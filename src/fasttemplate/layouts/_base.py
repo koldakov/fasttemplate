@@ -11,7 +11,7 @@ _ASSETS_DIR: Path = PROJECT_ROOT_DIR / "assets"
 
 
 class Asset(NamedTuple):
-    type: str  # noqa: A003
+    type: str
     name: str
 
 
@@ -48,7 +48,7 @@ def _render(
     if not str(render_file).endswith(".mako"):
         raise ValueError("Render file should end with .mako")
 
-    template: Template = Template(filename=str(template_path))
+    template: Template = Template(filename=str(template_path))  # noqa: S702
 
     render_file.parent.mkdir(parents=True, exist_ok=True)
     relative_file: str = str(render_file).split(".mako")[0]
@@ -56,12 +56,10 @@ def _render(
         file_.write(template.render(**args))
 
 
-class LayoutBaseError(Exception):
-    ...
+class LayoutBaseError(Exception): ...
 
 
-class AssetDoesNotExistError(LayoutBaseError):
-    ...
+class AssetDoesNotExistError(LayoutBaseError): ...
 
 
 class LayoutBase(ABC):
